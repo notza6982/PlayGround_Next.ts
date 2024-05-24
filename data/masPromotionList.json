@@ -1,0 +1,39 @@
+[
+    {
+        "promotionCode" : "PROMOTION_1",
+        "promotionGroupCode" : "PROMOTION_GROUP_1",
+        "promotionGroupCategory": "Coupon",
+        "promotionNameLocal" : "ส่วนลด 10 บาท",
+        "amount" : 10
+    },
+    {
+        "promotionGroupCode" : "PROMOTION_GROUP_1",
+        "promotionGroupCategory": "Coupon",
+        "promotionNameLocal" : "ส่วนลด 20 บาท",
+        "amount" : 20
+    },
+    {
+        "promotionGroupCode" : "PROMOTION_GROUP_1",
+        "promotionGroupCategory": "Coupon",
+        "promotionNameLocal" : "ส่วนลด 30 บาท",
+        "amount" : 30
+    },
+    {
+        "promotionGroupCode" : "PROMOTION_GROUP_2",
+        "promotionGroupCategory": "Coupon",
+        "promotionNameLocal" : "ส่วนลด 10%",
+        "amount" : 10
+    },
+    {
+        "promotionGroupCode" : "PROMOTION_GROUP_2",
+        "promotionGroupCategory": "Coupon",
+        "promotionNameLocal" : "ส่วนลด 20%",
+        "amount" : 20
+    },
+    {
+        "promotionGroupCode" : "PROMOTION_GROUP_2",
+        "promotionGroupCategory": "Coupon",
+        "promotionNameLocal" : "ส่วนลด 30%",
+        "amount" : 30
+    }
+]
