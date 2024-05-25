@@ -307,7 +307,7 @@ const PreviewPriceCard = ({ productGroupList, productDataList }: any) => {
             <span>รวม</span>
 
             <span>
-              <span className="font-bold">{totalPrice}</span> บาท
+              <span className="font-bold">{totalPrice < 0 ? 0 : totalPrice}</span> บาท
             </span>
           </div>
         </Card>

@@ -64,5 +64,12 @@
     "promotionNameLocal": "ส่วนลดเสื้อแขนยาว 30%",
     "productGroupCode": "PG_001",
     "amount": 30
+  },
+  {
+    "promotionCode": "PROMOTION_10",
+    "promotionGroupCode": "PROMOTION_GROUP_1",
+    "promotionGroupCategory": "Coupon",
+    "promotionNameLocal": "ส่วนลด 1000 บาท",
+    "amount": 1000
   }
 ]
