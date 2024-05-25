@@ -16,9 +16,10 @@ const productSlice = createSlice({
         state.push(...data);
       }
     },
-    clearSelectedProductData: (state) => {
-      state = []
-    },
+    clearSelectedProductData: (state = initialSelectedProduct) => {
+      return initialSelectedProduct;
+    }
+      ,
   },
 });
 

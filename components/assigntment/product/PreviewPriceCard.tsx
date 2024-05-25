@@ -176,12 +176,11 @@ const PreviewPriceCard = ({ productGroupList, productDataList }: any) => {
   return (
     <div className="w-full">
       <Card className="w-full p-4 h-full rounded">
-        <div className="flex justify-between mt-4 mb-4">
-          <span>รายการสินค้าทั้งหมด</span>
-
+        <div className="flex justify-between mt-4 mb-4 text-[18px]">
+          <span >รายการสินค้าทั้งหมด</span>
           <span>
             <span className="font-bold">
-              {productDataList?.reduce(
+              {productDataList && productDataList?.reduce(
                 (accumulator: number, current: any) =>
                   accumulator + current.amount,
                 0
@@ -192,12 +191,13 @@ const PreviewPriceCard = ({ productGroupList, productDataList }: any) => {
         </div>
 
         <div className="w-full border-b-2 mt-4 border-[#E4E7EC] mb-4" />
-        <Card className="w-full px-4 py-2 flex justify-between mb-4 h-[50px] items-center">
+        <Card className="w-full px-4 py-2 flex justify-between mb-4 h-[50px] items-center  bg-[#F8F8F8]">
           {selectedCoupon ? (
             <Chip
               label={selectedCoupon?.promotionNameLocal}
               variant="outlined"
               onDelete={() => setSelectedCoupon(null)}
+              className="text-[#097969] border-[#097969] bg-white"
             />
           ) : (
             <span />
@@ -211,12 +211,13 @@ const PreviewPriceCard = ({ productGroupList, productDataList }: any) => {
           </span>
         </Card>
 
-        <Card className="w-full px-4 py-2 flex justify-between mb-4 h-[50px] items-center">
+        <Card className="w-full px-4 py-2 flex justify-between mb-4 h-[50px] items-center bg-[#F8F8F8]">
           {selectedOnTop ? (
             <Chip
               label={selectedOnTop?.promotionNameLocal}
               variant="outlined"
               onDelete={() => setSelectedOnTop(null)}
+              className="text-[#097969] border-[#097969] bg-white"
             />
           ) : (
             <span />

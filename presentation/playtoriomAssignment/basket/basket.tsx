@@ -57,15 +57,15 @@ const BasketClientPage = () => {
 
   return (
     <div
-      className="w-full h-full ml-auto mr-auto"
+      className="w-full h-full "
       style={{ minHeight: "90vh" }}
     >
       <div className="w-full m-4">
-        <div className="flex flex-row items-center cursor-pointer" onClick={goback}>
-          <ArrowBackIosIcon sx={{ color: "#0BB9B2" }} />
-          <span className="flex justify-center items-center text-[#0BB9B2] text-[14px] font-bold">
-            ตะกร้าสินค้า
-          </span>
+        <div
+          className="text-[#6495ED] text-[18px]  cursor-pointer"
+          onClick={goback}
+        >
+          {"<"} ตะกร้าสินค้า
         </div>
       </div>
 
@@ -89,25 +89,7 @@ const BasketClientPage = () => {
         </div>
       </div>
 
-      {/* 
-      <div className="w-full flex flex-row" style={{ flexWrap: "wrap" }}>
-        <div className="flex basis-8/12 p-4">
-          <div className="w-full">
-            <ProductInbasket
-              productGroupList={productGroupList}
-              productDataList={productDataList}
-            />
-          </div>
-        </div>
-        <div className="flex basis-4/12 p-4">
-          <div className="w-full h-fit">
-            <PreviewPriceCard
-              productGroupList={productGroupList}
-              productDataList={productDataList}
-            />
-          </div>
-        </div>
-      </div> */}
+
     </div>
   );
 };

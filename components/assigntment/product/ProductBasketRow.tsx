@@ -7,7 +7,7 @@ import Card from "@mui/material/Card";
 
 const ProductBasketRow = ({ data }: any) => {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row  text-[16px] ">
       <Card className="w-full p-1 m-2">
         <div className="flex flex-row items-center">
           <div className="flex basis-6/12 items-center">
