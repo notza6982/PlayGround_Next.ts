@@ -12,6 +12,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import { getPromotionByCategory } from "@/app/(api)/api/playtoriumAsgApi";
+import DiscountIcon from "@mui/icons-material/Discount";
 
 interface CouponProps {
   isOpen: boolean;
@@ -32,7 +33,6 @@ const AddCouponModal: React.FC<CouponProps> = ({
   const [promotionList, setPromotionList] = useState<any>();
 
   const handleChange = (event: SelectChangeEvent) => {
-    console.log(event.target.value);
     setTempSelectedCoupon(event.target.value as any);
   };
 
@@ -48,8 +48,6 @@ const AddCouponModal: React.FC<CouponProps> = ({
   }, []);
 
   const onCloseWithOutAction = () => {
-    console.log(selectedCoupon);
-    console.log(selectedCoupon?.promotionCode);
     setTempSelectedCoupon(selectedCoupon?.promotionCode);
     onClose();
   };
@@ -81,12 +79,6 @@ const AddCouponModal: React.FC<CouponProps> = ({
   const modalBody = (
     <div className="w-full h-[400px]">
       <div className="flex flex-col">
-        {/* <div className="flex flex-row mb-4">
-          <span className="text-[#344054] text-[16px] font-light">
-          เลือกคูปอง
-          </span>
-        </div> */}
-
         <div className="w-full h-[320px] max-h-[320px] overflow-y-scroll">
           <FormControl className="w-full">
             <RadioGroup
@@ -96,16 +88,19 @@ const AddCouponModal: React.FC<CouponProps> = ({
             >
               {promotionList?.map((itm: any, index: number) => {
                 return (
-                  <FormControlLabel
-                    value={itm?.promotionCode}
-                    control={<Radio />}
-                    label={
-                      <Card className="w-full p-4">
-                        {itm?.promotionNameLocal}
-                      </Card>
-                    }
-                    className="mb-4 w-full"
-                  />
+                  <Card className="w-[98%] p-4 mb-4">
+                    <FormControlLabel
+                      value={itm?.promotionCode}
+                      control={<Radio />}
+                      label={
+                        <div>
+                          <DiscountIcon />
+                          <span className="ml-2">{itm?.promotionNameLocal}</span> 
+                        </div>
+                      }
+                      className=" w-full"
+                    />
+                  </Card>
                 );
               })}
             </RadioGroup>
