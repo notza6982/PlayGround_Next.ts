@@ -66,8 +66,8 @@ const BasketClientPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-row flex-wrap" style={{ flexWrap: "wrap" }}>
-        <div className="flex flex-auto p-4 ">
+      <div className="flex flex-row " style={{ flexWrap: "wrap" }}>
+        <div className="flex basis-8/12 p-4 ">
           {productDataList && productDataList?.length != 0 ? (
             <ProductInbasket
               productGroupList={productGroupList}
@@ -82,7 +82,7 @@ const BasketClientPage = () => {
             </Card>
           )}
         </div>
-        <div className="flex lg:basis-4/12 basis-full p-4">
+        <div className="flex basis-4/12 p-4">
           <div className="w-full h-fit">
             <PreviewPriceCard
               productGroupList={productGroupList}
