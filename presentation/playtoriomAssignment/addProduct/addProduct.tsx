@@ -37,10 +37,9 @@ const AddProductClientPage = () => {
       .catch(function (error) {
         console.log(error);
       });
-      
   }, []);
 
-  const addSelectedProduct = (selectedProduct: Product,amount : number) => {
+  const addSelectedProduct = (selectedProduct: Product, amount: number) => {
     // romve selected product from add list
     var tempProductDataList = productDataList;
     tempProductDataList = tempProductDataList?.filter(
@@ -75,12 +74,14 @@ const AddProductClientPage = () => {
           onClick={goToPay}
           style={{ marginRight: 27, marginTop: 15 }}
         >
-          <span style={{ fontSize: 30, marginRight: 5 }}>ตะกร้าสินค้า</span>
+          <span className="text-[20px] " style={{ marginRight: 5 }}>
+            ตะกร้าสินค้า
+          </span>
           <Badge
             badgeContent={selectedProductList ? selectedProductList.length : 0}
             color="error"
           >
-            <ShoppingBasketIcon sx={{ fontSize: 30 }} />
+            <ShoppingBasketIcon sx={{ fontSize: 20 }} />
           </Badge>
         </Button>
       </div>

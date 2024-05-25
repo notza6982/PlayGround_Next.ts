@@ -9,7 +9,7 @@ import ProductBasketRow from "./ProductBasketRow";
 
 const ProductInbasket = ({ productGroupList, productDataList }: any) => {
   return (
-    <div className="w-full ">
+    <div className="w-full">
       {productGroupList?.map((itm: any, index: number) => {
         return (
           <Accordion

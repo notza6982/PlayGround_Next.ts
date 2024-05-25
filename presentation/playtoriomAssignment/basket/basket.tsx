@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button } from "@mui/material";
+import { Button, Card } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/store/store";
@@ -9,7 +9,7 @@ import { useAppDispatch } from "@/app/slices/hooks";
 import ProductInbasket from "@/components/assigntment/product/ProductInbasket";
 import { clearSelectedProductData } from "@/app/slices/productSlice";
 import PreviewPriceCard from "@/components/assigntment/product/PreviewPriceCard";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
 const BasketClientPage = () => {
   const dispatch = useAppDispatch();
@@ -56,11 +56,8 @@ const BasketClientPage = () => {
   }, [selectedProductData]);
 
   return (
-    <div
-      className="w-full h-full "
-      style={{ minHeight: "90vh" }}
-    >
-      <div className="w-full m-4">
+    <div className="w-full h-full " style={{ minHeight: "90vh" }}>
+      <div className="w-full p-4">
         <div
           className="text-[#6495ED] text-[18px]  cursor-pointer"
           onClick={goback}
@@ -69,17 +66,23 @@ const BasketClientPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-row" style={{ flexWrap: "wrap" }}>
-        <div className="flex p-4" style={{ flexBasis: "66.666667%" }}>
-          <ProductInbasket
-            productGroupList={productGroupList}
-            productDataList={productDataList}
-          />
+      <div className="flex flex-row flex-wrap" style={{ flexWrap: "wrap" }}>
+        <div className="flex flex-auto p-4 ">
+          {productDataList && productDataList?.length != 0 ? (
+            <ProductInbasket
+              productGroupList={productGroupList}
+              productDataList={productDataList}
+            />
+          ) : (
+            <Card className="w-full h-[400px]">
+              <div className="w-full h-full flex flex-col justify-center items-center">
+                <ErrorOutlineIcon sx={{ fontSize: 150 }} />
+                <div className=" mt-4" style={{fontSize:30}}>ไม่มีรายการสินค้าในตระกร้า</div>
+              </div>
+            </Card>
+          )}
         </div>
-        <div
-          className="flex basis-4/12 p-4"
-          style={{ flexBasis: "33.333333%" }}
-        >
+        <div className="flex lg:basis-4/12 basis-full p-4">
           <div className="w-full h-fit">
             <PreviewPriceCard
               productGroupList={productGroupList}
@@ -88,8 +91,6 @@ const BasketClientPage = () => {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };
