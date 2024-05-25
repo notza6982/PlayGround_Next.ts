@@ -17,7 +17,7 @@ const productSlice = createSlice({
       }
     },
     clearSelectedProductData: (state) => {
-      state = [];
+      state = []
     },
   },
 });
